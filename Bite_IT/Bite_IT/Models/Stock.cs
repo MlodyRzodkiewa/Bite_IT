@@ -5,17 +5,17 @@ namespace Bite_IT.Models
 {
     public class Stock
     {
-        public Guid Id { get; }
+        public int Id { get; }
         public string Name { get; private set; }
 
         public List<ProductInStock> Products { get; private set; } = new();
         
-        public Guid RestaurantId { get; private set; }
+        public int RestaurantId { get; private set; }
         public Restaurant Restaurant { get; private set; }
 
-        public Stock(string name, Restaurant restaurant)
+        public Stock(int id, string name, Restaurant restaurant)
         {
-            Id = Guid.NewGuid();
+            Id = id;
             Name = name;
             RestaurantId = restaurant.Id;
             Restaurant = restaurant;

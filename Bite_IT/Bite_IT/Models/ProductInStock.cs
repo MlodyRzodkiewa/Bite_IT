@@ -9,7 +9,7 @@ namespace Bite_IT.Models
     public class ProductInStock : Product
     {
         public List<ProductItem> ProductItems { get; private set; } = new();
-        public Guid StockId { get; private set; }
+        public int StockId { get; private set; }
         public Stock Stock { get; private set; }
 
         public ProductInStock(ProductName productName, ProductType productType, float quantity, Stock stock) : 

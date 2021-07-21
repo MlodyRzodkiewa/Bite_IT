@@ -6,7 +6,7 @@ namespace Bite_IT.Models
     {
        public DateTime ExpirationDate { get; private set; } 
        
-       public Guid ProductInStockId { get; private set; }
+       public int ProductInStockId { get; private set; }
        public ProductInStock ProductInStock { get; private set; }
 
        public ProductItem(ProductName productName, ProductType productType, float quantity, ProductInStock productInStock, 

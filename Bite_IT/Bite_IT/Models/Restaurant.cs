@@ -8,7 +8,7 @@ namespace Bite_IT.Models
 {
     public class Restaurant
     {
-        public Guid Id { get; }
+        public int Id { get; }
         public string Name { get; private set; }
         public string Address { get; private set; }
 
@@ -20,9 +20,9 @@ namespace Bite_IT.Models
         
         public Menu Menu { get; private set; } = new();
 
-        public Restaurant(string name, string address)
+        public Restaurant(int id, string name, string address)
         {
-            Id = Guid.NewGuid();
+            Id = id;
             Name = name;
             Address = address;
         }

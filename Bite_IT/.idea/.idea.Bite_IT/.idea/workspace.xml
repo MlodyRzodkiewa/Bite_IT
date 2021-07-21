@@ -4,7 +4,13 @@
     <projectFile>Bite_IT/Bite_IT.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="757e0dab-663f-4b95-a734-b951408b428c" name="Default Changelist" comment="" />
+    <list default="true" id="757e0dab-663f-4b95-a734-b951408b428c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bite_IT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bite_IT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/ProductInStock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Models/ProductInStock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/ProductItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Models/ProductItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/Restaurant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Models/Restaurant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/Stock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Models/Stock.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,11 +30,11 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Bite_IT/Models/ProductInSTock.cs" />
-      <option value="$PROJECT_DIR$/Bite_IT/Models/Restaurant.cs" />
-      <option value="$PROJECT_DIR$/Bite_IT/Models/Stock.cs" />
-      <option value="$PROJECT_DIR$/Bite_IT/Models/ProductInStock.cs" />
-      <option value="$PROJECT_DIR$/Bite_IT/Models/ProductItem.cs" />
       <option value="$PROJECT_DIR$/Bite_IT/Models/Product.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Models/ProductItem.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Models/ProductInStock.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Models/Stock.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Models/Restaurant.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vcEsa1Y1ognS6Ns2iIvgPMV5T6" />
@@ -87,7 +93,9 @@
       <option name="presentableId" value="Default" />
       <updated>1626853188084</updated>
       <workItem from="1626853195308" duration="4220000" />
-      <workItem from="1626864490076" duration="410000" />
+      <workItem from="1626864490076" duration="609000" />
+      <workItem from="1626870841306" duration="98000" />
+      <workItem from="1626879577117" duration="286000" />
     </task>
     <servers />
   </component>
@@ -106,6 +114,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
