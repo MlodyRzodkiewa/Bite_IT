@@ -6,10 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="757e0dab-663f-4b95-a734-b951408b428c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bite_IT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bite_IT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/ProductInStock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Models/ProductInStock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/ProductItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Models/ProductItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/Restaurant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Models/Restaurant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/Stock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Models/Stock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Bite_IT.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Bite_IT.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Domain/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/ProductInStock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Domain/ProductInStock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/ProductItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Domain/ProductItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/Restaurant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Domain/Restaurant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/Models/Stock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/Domain/Stock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/obj/Bite_IT.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/obj/Bite_IT.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/obj/Bite_IT.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/obj/Bite_IT.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/obj/Debug/net5.0/Bite_IT.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/obj/Debug/net5.0/Bite_IT.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/obj/Debug/net5.0/Bite_IT.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/obj/Debug/net5.0/Bite_IT.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bite_IT/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Bite_IT/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +45,19 @@
       <option value="$PROJECT_DIR$/Bite_IT/Models/ProductInStock.cs" />
       <option value="$PROJECT_DIR$/Bite_IT/Models/Stock.cs" />
       <option value="$PROJECT_DIR$/Bite_IT/Models/Restaurant.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Models.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Configurtion/Entities/ProductItemConfiguration.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Configurtion/Entities/StockConfiguration.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Configurtion/Entities/RestaurantConfiguration.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Configurtion/Entities/ProductInStockConfiguration.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Domain/ProductInStock.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Domain/ProductItem.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Domain/Restaurant.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Models/RestaurantDto.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Models/ProductItemDto.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Models/ProductInStockDto.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Domain/Stock.cs" />
+      <option value="$PROJECT_DIR$/Bite_IT/Models/StockDto.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vcEsa1Y1ognS6Ns2iIvgPMV5T6" />
@@ -95,7 +118,9 @@
       <workItem from="1626853195308" duration="4220000" />
       <workItem from="1626864490076" duration="609000" />
       <workItem from="1626870841306" duration="98000" />
-      <workItem from="1626879577117" duration="286000" />
+      <workItem from="1626879577117" duration="332000" />
+      <workItem from="1626941141042" duration="5657000" />
+      <workItem from="1626978802907" duration="35000" />
     </task>
     <servers />
   </component>

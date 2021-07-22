@@ -4,27 +4,32 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Data.Common;
 
-namespace Bite_IT.Models
+namespace Bite_IT.Domain
 {
     public class Restaurant
     {
         public int Id { get; }
         public string Name { get; private set; }
         public string Address { get; private set; }
+        public string PhoneNumber { get; private set; }
+        public string Email { get; private set; }
 
-        public List<Employee> Employees { get; private set; } = new();
+        public IList<Employee> Employees { get; private set; }
         
-        public List<Stock> Stocks { get; private set; } = new();
+        public IList<Stock> Stocks { get; private set; }
 
-        public List<Order> Orders { get; private set; } = new();
+        public IList<Order> Orders { get; private set; }
         
-        public Menu Menu { get; private set; } = new();
+        public Menu Menu { get; private set; }
 
         public Restaurant(int id, string name, string address)
         {
             Id = id;
             Name = name;
             Address = address;
+            Employees = new List<Employee>();
+            Stocks = new List<Stock>();
+            Orders = new List<Order>();
         }
     }
 }
