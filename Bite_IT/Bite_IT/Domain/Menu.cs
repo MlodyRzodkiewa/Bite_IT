@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Bite_IT.Models
+namespace Bite_IT.Domain
 {
     public class Menu
     {

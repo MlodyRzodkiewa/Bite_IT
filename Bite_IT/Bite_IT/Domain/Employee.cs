@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bite_IT.Models
+namespace Bite_IT.Domain
 {
     public class Employee
     {
