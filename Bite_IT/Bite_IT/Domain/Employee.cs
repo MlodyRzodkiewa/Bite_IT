@@ -4,6 +4,7 @@ namespace Bite_IT.Domain
 {
     public class Employee
     {
+        public int Id { get; set; }
         public String Login { get; set; }
         public String Password { get; set; }
         public String FirstName { get; set; }

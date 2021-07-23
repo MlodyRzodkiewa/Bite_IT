@@ -5,7 +5,6 @@ namespace Bite_IT.Domain
 {
     public class Menu
     {
-        [Required]
         public int Id { get; set; }
         public List<Meal> Meals { get; set; }
         public int RestaurantId { get; set; }
