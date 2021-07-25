@@ -18,11 +18,11 @@ namespace Bite_IT.Data
 
         public RestaurantDbContext(DbContextOptions options) : base(options)
         {
-            EnumsMapper();
+            // EnumsMapper();
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Bite_IT;Integrated Security=true;");
+            => optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Bite_IT;User Id=postgres;Password=;");
 
         private void EnumsMapper ()
         {
@@ -73,11 +73,11 @@ namespace Bite_IT.Data
                 .WithOne(employee => employee.Restaurant)
                 .HasForeignKey(employee => employee.RestaurantId);
 
-            modelBuilder.HasPostgresEnum<MealType>();
-            modelBuilder.HasPostgresEnum<ProductName>();
-            modelBuilder.HasPostgresEnum<ProductType>();
-            modelBuilder.HasPostgresEnum<PromotionType>();
-            modelBuilder.HasPostgresEnum<Status>();
+            // modelBuilder.HasPostgresEnum<MealType>();
+            // modelBuilder.HasPostgresEnum<ProductName>();
+            // modelBuilder.HasPostgresEnum<ProductType>();
+            // modelBuilder.HasPostgresEnum<PromotionType>();
+            // modelBuilder.HasPostgresEnum<Status>();
             //modelBuilder.HasPostgresEnum<TableNumber>();
             
             base.OnModelCreating(modelBuilder);
