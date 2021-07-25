@@ -22,18 +22,22 @@ namespace Bite_IT.Models
 
     public class UpdateRestaurantDto : CreateRestaurantDto
     {
-        public IList<EmployeeDto> Employees { get; private set; }
+        /*
+         public IList<EmployeeDto> Employees { get; private set; }
         public IList<StockDto> Stocks { get; private set; }
         public IList<OrderDto> Orders { get; private set; }
         public MenuDto Menu { get; private set; }
+        */
     }
     
     public class RestaurantDto : CreateRestaurantDto
     {
+        /*
         public int Id { get; private set; }
         public IList<EmployeeDto> Employees { get; private set; }
         public IList<StockDto> Stocks { get; private set; }
         public IList<OrderDto> Orders { get; private set; }
         public MenuDto Menu { get; private set; }
+        */
     }
 }

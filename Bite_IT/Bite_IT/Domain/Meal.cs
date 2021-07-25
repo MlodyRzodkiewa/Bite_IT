@@ -10,10 +10,10 @@ namespace Bite_IT.Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public MealType MealType { get; set; }
+        // public MealType MealType { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public PromotionType PromotionType { get; set; }
+        // public PromotionType PromotionType { get; set; }
         [ForeignKey(nameof(Menu))]
         public int MenuId { get; set; }
         public Menu Menu { get; set; }

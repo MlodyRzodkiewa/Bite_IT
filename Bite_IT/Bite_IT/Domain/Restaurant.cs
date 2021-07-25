@@ -9,7 +9,7 @@ namespace Bite_IT.Domain
 {
     public class Restaurant
     {
-        public int Id { get; }
+        public int Id { get; set; }
         public string Name { get; private set; }
         public string Address { get; private set; }
         public string PhoneNumber { get; private set; }
@@ -23,14 +23,14 @@ namespace Bite_IT.Domain
         
         public Menu Menu { get; private set; }
 
-        public Restaurant(int id, string name, string address)
-        {
-            Id = id;
-            Name = name;
-            Address = address;
-            Employees = new List<Employee>();
-            Stocks = new List<Stock>();
-            Orders = new List<Order>();
-        }
+        // public Restaurant(int id, string name, string address)
+        // {
+        //     Id = id;
+        //     Name = name;
+        //     Address = address;
+        //     Employees = new List<Employee>();
+        //     Stocks = new List<Stock>();
+        //     Orders = new List<Order>();
+        // }
     }
 }

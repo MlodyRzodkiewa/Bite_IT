@@ -4,7 +4,7 @@ using Bite_IT.Domain;
 
 namespace Bite_IT.Models
 {
-    public class CreateProductInStockDto : CreateProductDto
+    public class CreateProductInStockDto// : CreateProductDto
     {
         [Required]
         public int StockId { get; set; }
