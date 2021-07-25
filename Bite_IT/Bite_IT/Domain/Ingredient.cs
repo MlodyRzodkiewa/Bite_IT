@@ -2,7 +2,7 @@
 
 namespace Bite_IT.Domain
 {
-    public class Ingredient
+    public class Ingredient : Product
     {
         public ICollection<Meal> Meals { get; set; }
     }
