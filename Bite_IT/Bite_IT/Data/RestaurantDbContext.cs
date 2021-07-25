@@ -1,5 +1,6 @@
 using Bite_IT.Domain;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace Bite_IT.Data
 {
@@ -17,6 +18,20 @@ namespace Bite_IT.Data
 
         public RestaurantDbContext(DbContextOptions options) : base(options)
         {
+            EnumsMapper();
+        }
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Bite_IT;Integrated Security=true;");
+
+        private void EnumsMapper ()
+        {
+            NpgsqlConnection.GlobalTypeMapper.MapEnum<MealType>();
+            NpgsqlConnection.GlobalTypeMapper.MapEnum<ProductName>();
+            NpgsqlConnection.GlobalTypeMapper.MapEnum<ProductType>();
+            NpgsqlConnection.GlobalTypeMapper.MapEnum<PromotionType>();
+            NpgsqlConnection.GlobalTypeMapper.MapEnum<Status>();
+            //NpgsqlConnection.GlobalTypeMapper.MapEnum<TableNumber>();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -63,7 +78,7 @@ namespace Bite_IT.Data
             modelBuilder.HasPostgresEnum<ProductType>();
             modelBuilder.HasPostgresEnum<PromotionType>();
             modelBuilder.HasPostgresEnum<Status>();
-            modelBuilder.HasPostgresEnum<TableNumber>();
+            //modelBuilder.HasPostgresEnum<TableNumber>();
             
             base.OnModelCreating(modelBuilder);
         }
