@@ -31,9 +31,12 @@ namespace Bite_IT
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<RestaurantDbContext>(options =>
-                //options.UseSqlite(Configuration.GetConnectionString("SqliteConnection")));
-                options.UseNpgsql(Configuration.GetConnectionString("NpgsqlConnectionString")));
+            // services.AddDbContext<RestaurantDbContext>(options =>
+            //     //options.UseSqlite(Configuration.GetConnectionString("SqliteConnection")));
+            //     options.UseNpgsql(Configuration.GetConnectionString("NpgsqlConnectionString")));
+            services.AddDbContext<RestaurantDbContext>(options => {
+                options.UseNpgsql(Configuration["Data:DefaultConnection:ConnectionString"]);
+            });
             
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
