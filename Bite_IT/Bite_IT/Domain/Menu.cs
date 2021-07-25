@@ -9,5 +9,6 @@ namespace Bite_IT.Domain
         public List<Meal> Meals { get; set; }
         public int RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }
+        public Status Status { get; set; }
     }
 }

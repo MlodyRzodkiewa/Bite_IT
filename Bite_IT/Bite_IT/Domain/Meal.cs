@@ -14,10 +14,10 @@ namespace Bite_IT.Domain
         public decimal Price { get; set; }
         public string Description { get; set; }
         public PromotionType PromotionType { get; set; }
-        // [ForeignKey(nameof(Menu))]
+        [ForeignKey(nameof(Menu))]
         public int MenuId { get; set; }
-        //public Menu Menu { get; set; }
+        public Menu Menu { get; set; }
         public ICollection<Ingredient> Ingredients { get; set; }
-        //public ICollection<Order> Orders { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }
