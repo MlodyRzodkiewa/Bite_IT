@@ -4,7 +4,7 @@ using Bite_IT.Domain;
 
 namespace Bite_IT.Models
 {
-    public class CreateProductItemDto : ProductDto
+    public class CreateProductItemDto// : ProductDto
     {
         [Required]
         public DateTime ExpirationDate { get; private set; }

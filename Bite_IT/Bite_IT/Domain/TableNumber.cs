@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Bite_IT.Domain
 {
-    public class TableNumber
+    public enum TableNumber
     {
 
     }

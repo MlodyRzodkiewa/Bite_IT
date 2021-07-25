@@ -16,8 +16,8 @@ namespace Bite_IT.Domain
         public PromotionType PromotionType { get; set; }
         // [ForeignKey(nameof(Menu))]
         public int MenuId { get; set; }
-        //public Menu Menu { get; set; }
+        public Menu Menu { get; set; }
         public ICollection<Ingredient> Ingredients { get; set; }
-        //public ICollection<Order> Orders { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }
