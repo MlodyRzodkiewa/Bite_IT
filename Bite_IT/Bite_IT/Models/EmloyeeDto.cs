@@ -7,9 +7,9 @@ namespace Bite_IT.Models
     public class CreateEmployeeDto
     {
         [Required]
-        public String Login { get; set; }
+        public String UserName { get; set; }
         [Required]
-        public String Password { get; set; }
+        public String PasswordHash { get; set; }
         public String FirstName { get; set; }
         public String LastName { get; set; }
         [Required]
