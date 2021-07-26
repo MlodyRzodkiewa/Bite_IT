@@ -4,44 +4,85 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Bite_IT.Data;
 
 namespace Bite_IT.Infrastructure
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        public Task<IList<T>> GetAll(Expression<Func<T, bool>> expression = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, List<string> includes = null)
+        private readonly RestaurantDbContext _context;
+        private readonly DbSet<T> _db;
+        
+        public GenericRepository(RestaurantDbContext context)
         {
-            throw new NotImplementedException();
+            this._context = context;
+            this._db = _context.Set<T>();
+        }
+        public async Task Add(T entity)
+        {
+            await _db.AddAsync(entity);
         }
 
-        public Task<T> Get(Expression<Func<T, bool>> expression = null, List<string> includes = null)
+        public async Task AddRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            await _db.AddRangeAsync(entities);
         }
 
-        public Task Add(T entity)
+        public async Task<T> Get(Expression<Func<T, bool>> expression = null, List<string> includes = null)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = _db;
+
+            if (includes != null)
+            {
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+
+            return await query.AsNoTracking().FirstOrDefaultAsync(expression);
         }
 
-        public Task AddRange(IEnumerable<T> entities)
+        public async Task<IList<T>> GetAll(Expression<Func<T, bool>> expression = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, List<string> includes = null)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = _db;
+
+            if (expression != null)
+            {
+                query = query.Where(expression);
+            }
+
+            if (includes != null)
+            {
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+
+            if (orderBy != null)
+            {
+                query = orderBy(query);
+            }
+
+            return await query.AsNoTracking().ToListAsync();
+        } 
+        
+        public void Modify(T entity)
+        {
+            _db.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
-        public Task Remove(int id)
+        public async Task Remove(int id)
         {
-            throw new NotImplementedException();
+            var entity = await _db.FindAsync(id);
+            _db.Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Modify(T entity)
-        {
-            throw new NotImplementedException();
+            _db.RemoveRange(entities);
         }
     }
 }
