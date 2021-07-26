@@ -10,6 +10,7 @@ namespace Bite_IT.Domain
         public DateTime BirthDateTime { get; set; }
         public int RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }
+        public RoleType Role { get; set; }
         
     }
 }
