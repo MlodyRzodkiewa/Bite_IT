@@ -1,6 +1,8 @@
 using Bite_IT.Domain;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using System.Configuration;
+using Microsoft.IdentityModel.Protocols;
 
 namespace Bite_IT.Data
 {
@@ -15,15 +17,12 @@ namespace Bite_IT.Data
         public DbSet<ProductItem> ProductItems { get; set; }
         public DbSet<Restaurant> Restaurant { get; set; }
         public DbSet<Stock> Stocks { get; set; }
-
+        
         public RestaurantDbContext(DbContextOptions options) : base(options)
         {
             // EnumsMapper();
         }
         
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Bite_IT;User Id=postgres;Password=;");
-
         private void EnumsMapper ()
         {
             NpgsqlConnection.GlobalTypeMapper.MapEnum<MealType>();
