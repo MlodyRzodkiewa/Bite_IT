@@ -12,10 +12,12 @@ using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using Bite_IT.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Protocols;
 
 namespace Bite_IT
 {
@@ -34,10 +36,7 @@ namespace Bite_IT
             services.AddDbContext<RestaurantDbContext>(options =>
                 //options.UseSqlite(Configuration.GetConnectionString("SqliteConnection")));
                 options.UseNpgsql(Configuration.GetConnectionString("NpgsqlConnectionString")));
-            // services.AddDbContext<RestaurantDbContext>(options => {
-            //     options.UseNpgsql(Configuration["Data:DefaultConnection:ConnectionString"]);
-            // });
-            
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
 
