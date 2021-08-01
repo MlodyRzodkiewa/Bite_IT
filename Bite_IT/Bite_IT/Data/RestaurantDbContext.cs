@@ -23,7 +23,7 @@ namespace Bite_IT.Data
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Bite_IT;User Id=postgres;Password=;");
+            => optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Bite_IT;User Id=postgres;");
 
         private void EnumsMapper ()
         {

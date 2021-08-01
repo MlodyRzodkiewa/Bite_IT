@@ -16,7 +16,7 @@ namespace Bite_IT.Configurations.Entities
                 },
                 new Order
                 {
-                    Id = 1, RestaurantId = 1, CreationDate = new DateTime(2021 - 07 - 26),
+                    Id = 2, RestaurantId = 1, CreationDate = new DateTime(2021 - 07 - 26),
                 }
             );
         }
