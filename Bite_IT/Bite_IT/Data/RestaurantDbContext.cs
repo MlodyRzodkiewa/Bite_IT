@@ -1,3 +1,4 @@
+using Bite_IT.Configurations.Entities;
 using Bite_IT.Domain;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
@@ -22,7 +23,7 @@ namespace Bite_IT.Data
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Bite_IT;User Id=postgres;Password=;");
+            => optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Bite_IT;User Id=postgres;");
 
         private void EnumsMapper ()
         {
@@ -81,6 +82,15 @@ namespace Bite_IT.Data
             //modelBuilder.HasPostgresEnum<TableNumber>();
             
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+            modelBuilder.ApplyConfiguration(new IngredientConfiguration());
+            modelBuilder.ApplyConfiguration(new MealConfiguration());
+            modelBuilder.ApplyConfiguration(new MenuConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductItemConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductInStockConfiguration());
+            modelBuilder.ApplyConfiguration(new RestaurantConfiguration());
+            modelBuilder.ApplyConfiguration(new StockConfiguration());
         }
     }
 }

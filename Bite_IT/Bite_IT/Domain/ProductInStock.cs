@@ -13,7 +13,7 @@ namespace Bite_IT.Domain
         public IList<ProductItem> ProductItems { get; private set; }
         
         [ForeignKey(nameof(Stock))]
-        public int StockId { get; private set; }
+        public int StockId { get; set; }
         public Stock Stock { get; private set; }
     }
 }
