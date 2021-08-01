@@ -7,6 +7,6 @@ namespace Bite_IT.Domain
 {
     public class TableNumber
     {
-
+        public int Id { get; set; }
     }
 }

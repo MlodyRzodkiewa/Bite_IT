@@ -2,6 +2,9 @@
 {
     public enum MealType
     {
-        
+        Soup,
+        MainDish,
+        Dessert,
+        Drink,
     }
 }
