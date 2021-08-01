@@ -1,3 +1,4 @@
+using Bite_IT.Configurations.Entities;
 using Bite_IT.Domain;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
@@ -81,6 +82,15 @@ namespace Bite_IT.Data
             //modelBuilder.HasPostgresEnum<TableNumber>();
             
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+            modelBuilder.ApplyConfiguration(new IngredientConfiguration());
+            modelBuilder.ApplyConfiguration(new MealConfiguration());
+            modelBuilder.ApplyConfiguration(new MenuConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductItemConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductInStockConfiguration());
+            modelBuilder.ApplyConfiguration(new RestaurantConfiguration());
+            modelBuilder.ApplyConfiguration(new StockConfiguration());
         }
     }
 }

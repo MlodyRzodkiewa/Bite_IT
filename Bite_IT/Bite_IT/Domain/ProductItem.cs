@@ -6,10 +6,10 @@ namespace Bite_IT.Domain
 {
     public class ProductItem : Product
     {
-       public DateTime ExpirationDate { get; private set; }
+       public DateTime ExpirationDate { get; set; }
        
        [ForeignKey(nameof(ProductInStock))]
-       public int ProductInStockId { get; private set; }
+       public int ProductInStockId { get; set; }
        public ProductInStock ProductInStock { get; private set; }
     }
 }
