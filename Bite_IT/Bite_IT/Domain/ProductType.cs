@@ -7,6 +7,7 @@ namespace Bite_IT.Domain
 {
     public enum ProductType
     {
-
+        Appetiser,
+        Soup
     }
 }

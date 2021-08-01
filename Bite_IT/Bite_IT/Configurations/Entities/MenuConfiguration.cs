@@ -9,8 +9,8 @@ namespace Bite_IT.Configurations.Entities
         public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Menu> builder)
         {
             builder.HasData(
-                new Menu {Id = 1, RestaurantId = 1,},
-                new Menu {Id = 2, RestaurantId = 2,}
+                new Menu {Id = 1, RestaurantId = 1,}
+                //new Menu {Id = 2, RestaurantId = 1,}
             );
         }
     }

@@ -10,7 +10,9 @@ namespace Bite_IT.Configurations.Entities
     {
         public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Ingredient> builder)
         {
-            
+            builder.HasData(
+                new Ingredient {Id = 1, Quantity = 2}
+            );
         }
     }
 }

@@ -19,11 +19,11 @@ namespace Bite_IT.Data
 
         public RestaurantDbContext(DbContextOptions options) : base(options)
         {
-            // EnumsMapper();
+            EnumsMapper();
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=Bite_IT;User Id=postgres;");
+            => optionsBuilder.UseNpgsql();
 
         private void EnumsMapper ()
         {
@@ -74,14 +74,15 @@ namespace Bite_IT.Data
                 .WithOne(employee => employee.Restaurant)
                 .HasForeignKey(employee => employee.RestaurantId);
 
-            // modelBuilder.HasPostgresEnum<MealType>();
-            // modelBuilder.HasPostgresEnum<ProductName>();
-            // modelBuilder.HasPostgresEnum<ProductType>();
-            // modelBuilder.HasPostgresEnum<PromotionType>();
-            // modelBuilder.HasPostgresEnum<Status>();
+            modelBuilder.HasPostgresEnum<MealType>();
+            modelBuilder.HasPostgresEnum<ProductName>();
+            modelBuilder.HasPostgresEnum<ProductType>();
+            modelBuilder.HasPostgresEnum<PromotionType>();
+            modelBuilder.HasPostgresEnum<Status>();
             //modelBuilder.HasPostgresEnum<TableNumber>();
             
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new StockConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new IngredientConfiguration());
             modelBuilder.ApplyConfiguration(new MealConfiguration());
@@ -90,7 +91,6 @@ namespace Bite_IT.Data
             modelBuilder.ApplyConfiguration(new ProductItemConfiguration());
             modelBuilder.ApplyConfiguration(new ProductInStockConfiguration());
             modelBuilder.ApplyConfiguration(new RestaurantConfiguration());
-            modelBuilder.ApplyConfiguration(new StockConfiguration());
         }
     }
 }

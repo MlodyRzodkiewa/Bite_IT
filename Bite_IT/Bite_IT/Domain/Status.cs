@@ -3,7 +3,5 @@
     public enum Status
     {
         Active,
-        
-        
     }
 }
