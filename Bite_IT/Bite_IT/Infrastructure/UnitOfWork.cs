@@ -17,6 +17,7 @@ namespace Bite_IT.Infrastructure
         public IGenericRepository<Employee> Employees => new GenericRepository<Employee>(_context);
         public IGenericRepository<Ingredient> Ingredients => new GenericRepository<Ingredient>(_context);
         public IGenericRepository<Meal> Meals => new GenericRepository<Meal>(_context);
+        public IGenericRepository<MealsIngredients> MealsIngredients => new GenericRepository<MealsIngredients>(_context);
         public IGenericRepository<Menu> Menu => new GenericRepository<Menu>(_context);
         public IGenericRepository<Order> Orders => new GenericRepository<Order>(_context);
         public IGenericRepository<ProductInStock> ProductsInStock => new GenericRepository<ProductInStock>(_context);
