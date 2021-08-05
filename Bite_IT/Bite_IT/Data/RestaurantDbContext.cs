@@ -18,6 +18,7 @@ namespace Bite_IT.Data
         public DbSet<ProductItem> ProductItems { get; set; }
         public DbSet<Restaurant> Restaurant { get; set; }
         public DbSet<Stock> Stocks { get; set; }
+        public DbSet<MealsIngredients> MealsIngredients { get; set; }
         
         public RestaurantDbContext(DbContextOptions options) : base(options)
         {
@@ -43,10 +44,20 @@ namespace Bite_IT.Data
                 .HasMany(pis => pis.ProductItems)
                 .WithOne(pi => pi.ProductInStock)
                 .HasForeignKey(pi => pi.ProductInStockId);
-            modelBuilder.Entity<Meal>()
-                .HasMany(meal => meal.Ingredients)
-                .WithMany(ingr => ingr.Meals)
-                .UsingEntity(j => j.ToTable("MealsIngredients"));
+            // modelBuilder.Entity<Meal>()
+            //     .HasMany(meal => meal.Ingredients)
+            //     .WithMany(ingr => ingr.Meals)
+            //     .UsingEntity(j => j.ToTable("MealsIngredients"));
+            modelBuilder.Entity<MealsIngredients>()
+                .HasKey(mi => new { mi.MealId, mi.IngredientId });
+            modelBuilder.Entity<MealsIngredients>()
+                .HasOne(mi => mi.Meal)
+                .WithMany(ingr => ingr.MealsIngredients)
+                .HasForeignKey(mi => mi.MealId);
+            modelBuilder.Entity<MealsIngredients>()
+                .HasOne(mi => mi.Ingredient)
+                .WithMany(ingr => ingr.MealsIngredients)
+                .HasForeignKey(mi => mi.IngredientId);
             modelBuilder.Entity<Menu>()
                 .HasMany(menu => menu.Meals)
                 .WithOne(meal => meal.Menu)
