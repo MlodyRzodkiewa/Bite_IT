@@ -18,7 +18,7 @@ namespace Bite_IT.Data
         public DbSet<ProductItem> ProductItems { get; set; }
         public DbSet<Restaurant> Restaurant { get; set; }
         public DbSet<Stock> Stocks { get; set; }
-        public DbSet<MealsIngredients> MealsIngredients { get; set; }
+        public DbSet<MealsIngredient> MealsIngredients { get; set; }
         
         public RestaurantDbContext(DbContextOptions options) : base(options)
         {
@@ -48,13 +48,13 @@ namespace Bite_IT.Data
             //     .HasMany(meal => meal.Ingredients)
             //     .WithMany(ingr => ingr.Meals)
             //     .UsingEntity(j => j.ToTable("MealsIngredients"));
-            modelBuilder.Entity<MealsIngredients>()
-                .HasKey(mi => new { mi.MealId, mi.IngredientId });
-            modelBuilder.Entity<MealsIngredients>()
+            modelBuilder.Entity<MealsIngredient>()
+                .HasKey(mi => new { mi.IngredientId, mi.MealId });
+            modelBuilder.Entity<MealsIngredient>()
                 .HasOne(mi => mi.Meal)
                 .WithMany(ingr => ingr.MealsIngredients)
                 .HasForeignKey(mi => mi.MealId);
-            modelBuilder.Entity<MealsIngredients>()
+            modelBuilder.Entity<MealsIngredient>()
                 .HasOne(mi => mi.Ingredient)
                 .WithMany(ingr => ingr.MealsIngredients)
                 .HasForeignKey(mi => mi.IngredientId);
@@ -98,8 +98,8 @@ namespace Bite_IT.Data
             modelBuilder.ApplyConfiguration(new StockConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new IngredientConfiguration());
-            modelBuilder.ApplyConfiguration(new MealConfiguration());
             modelBuilder.ApplyConfiguration(new MealsIngredientsConfiguration());
+            modelBuilder.ApplyConfiguration(new MealConfiguration());
             modelBuilder.ApplyConfiguration(new MenuConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new ProductItemConfiguration());

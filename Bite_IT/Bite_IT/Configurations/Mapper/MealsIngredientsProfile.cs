@@ -8,9 +8,9 @@ namespace Bite_IT.Configurations.Mapper
     {
         public MealsIngredientsProfile()
         {
-            CreateMap<MealsIngredients, CreateMealsIngredientsDto>().ReverseMap();
-            CreateMap<MealsIngredients, UpdateMealsIngredientsDto>().ReverseMap();
-            CreateMap<MealsIngredients, MealsIngredientsDto>().ReverseMap();
+            CreateMap<MealsIngredient, CreateMealsIngredientsDto>().ReverseMap();
+            CreateMap<MealsIngredient, UpdateMealsIngredientsDto>().ReverseMap();
+            CreateMap<MealsIngredient, MealsIngredientsDto>().ReverseMap();
         }
     }
 }

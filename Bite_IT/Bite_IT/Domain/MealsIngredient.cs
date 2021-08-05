@@ -1,6 +1,6 @@
 namespace Bite_IT.Domain
 {
-    public class MealsIngredients
+    public class MealsIngredient
     {
         public int MealId { get; set; }
         public Meal Meal { get; set; }

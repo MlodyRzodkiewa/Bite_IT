@@ -9,7 +9,7 @@ namespace Bite_IT.Infrastructure
         IGenericRepository<Employee> Employees { get; }
         IGenericRepository<Ingredient> Ingredients { get; }
         IGenericRepository<Meal> Meals { get; }
-        IGenericRepository<MealsIngredients> MealsIngredients { get; }
+        IGenericRepository<MealsIngredient> MealsIngredients { get; }
         IGenericRepository<Menu> Menu { get; }
         IGenericRepository<Order> Orders { get; }
         IGenericRepository<ProductInStock> ProductsInStock { get; }

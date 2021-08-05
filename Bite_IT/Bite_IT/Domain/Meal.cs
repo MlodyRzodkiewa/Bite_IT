@@ -19,7 +19,7 @@ namespace Bite_IT.Domain
         public int MenuId { get; set; }
         public Menu Menu { get; set; }
         //public ICollection<Ingredient> Ingredients { get; set; }
-        public ICollection<MealsIngredients> MealsIngredients { get; set; }
+        public ICollection<MealsIngredient> MealsIngredients { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
 }

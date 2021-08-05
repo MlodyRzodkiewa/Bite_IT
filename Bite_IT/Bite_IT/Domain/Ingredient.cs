@@ -5,6 +5,6 @@ namespace Bite_IT.Domain
     public class Ingredient : Product
     {
         //public ICollection<Meal> Meals { get; set; }
-        public ICollection<MealsIngredients> MealsIngredients { get; set; }
+        public ICollection<MealsIngredient> MealsIngredients { get; set; }
     }
 }
