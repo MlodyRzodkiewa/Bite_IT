@@ -12,8 +12,8 @@ namespace Bite_IT.Configurations.Entities
         {
             builder.HasData(
                 new MealsIngredient { MealId = 1, IngredientId = 3 },
-                new MealsIngredient { MealId = 1, IngredientId = 4 },
-                new MealsIngredient { MealId = 1, IngredientId = 12 },
+                new MealsIngredient { MealId = 1, IngredientId = 11 },
+                new MealsIngredient { MealId = 1, IngredientId = 13 },
                 new MealsIngredient { MealId = 2, IngredientId = 5 },
                 new MealsIngredient { MealId = 2, IngredientId = 7 },
                 new MealsIngredient { MealId = 2, IngredientId = 8 },

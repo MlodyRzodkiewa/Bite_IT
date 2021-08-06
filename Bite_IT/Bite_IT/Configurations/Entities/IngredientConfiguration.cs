@@ -14,55 +14,55 @@ namespace Bite_IT.Configurations.Entities
             builder.HasData(
                 new Ingredient
                 {
-                    Id = 1, productName = ProductName.Beef, Quantity = 2
+                    Id = 1, ProductName = ProductName.Beef.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 2, productName = ProductName.Beetroot, Quantity = 2
+                    Id = 2, ProductName = ProductName.Beetroot.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 3, productName = ProductName.Carrot, Quantity = 2
+                    Id = 3, ProductName = ProductName.Carrot.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 4, productName = ProductName.Fries, Quantity = 2
+                    Id = 4, ProductName = ProductName.Fries.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 5, productName = ProductName.Mushroom, Quantity = 2
+                    Id = 5, ProductName = ProductName.Mushroom.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 6, productName = ProductName.Orange, Quantity = 2
+                    Id = 6, ProductName = ProductName.Orange.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 7, productName = ProductName.Pasta, Quantity = 2
+                    Id = 7, ProductName = ProductName.Pasta.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 8, productName = ProductName.Peppers, Quantity = 2
+                    Id = 8, ProductName = ProductName.Peppers.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 9, productName = ProductName.Pork, Quantity = 2
+                    Id = 9, ProductName = ProductName.Pork.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 10, productName = ProductName.Potato, Quantity = 2
+                    Id = 10, ProductName = ProductName.Potato.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 11, productName = ProductName.Rice, Quantity = 2
+                    Id = 11, ProductName = ProductName.Rice.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 12, productName = ProductName.Schnitzel, Quantity = 2
+                    Id = 12, ProductName = ProductName.Schnitzel.ToString(), Quantity = 2
                 },
                 new Ingredient
                 {
-                    Id = 13, productName = ProductName.Tomato, Quantity = 2
+                    Id = 13, ProductName = ProductName.Tomato.ToString(), Quantity = 2
                 }
             );
         }

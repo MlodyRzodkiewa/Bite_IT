@@ -16,7 +16,8 @@ namespace Bite_IT.Models
     public class CreateProductDto : ProductDto
     {
         [Required]
-        public ProductName productName { get; set; }
+        public string ProductName { get; set; }
+        // public ProductName productName { get; set; }
         [Required]
         public ProductType productType { get; set; }
         [Required]
