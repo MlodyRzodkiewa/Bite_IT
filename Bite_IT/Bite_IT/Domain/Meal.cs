@@ -13,11 +13,13 @@ namespace Bite_IT.Domain
         public MealType MealType { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        // public PromotionType PromotionType { get; set; }
+        
+        public PromotionType PromotionType { get; set; }
         [ForeignKey(nameof(Menu))]
         public int MenuId { get; set; }
         public Menu Menu { get; set; }
-        public ICollection<Ingredient> Ingredients { get; set; }
+        //public ICollection<Ingredient> Ingredients { get; set; }
+        public ICollection<MealsIngredient> MealsIngredients { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
 }

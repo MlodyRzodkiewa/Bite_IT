@@ -18,6 +18,7 @@ namespace Bite_IT.Data
         public DbSet<ProductItem> ProductItems { get; set; }
         public DbSet<Restaurant> Restaurant { get; set; }
         public DbSet<Stock> Stocks { get; set; }
+        public DbSet<MealsIngredient> MealsIngredients { get; set; }
         
         public RestaurantDbContext(DbContextOptions options) : base(options)
         {
@@ -43,10 +44,20 @@ namespace Bite_IT.Data
                 .HasMany(pis => pis.ProductItems)
                 .WithOne(pi => pi.ProductInStock)
                 .HasForeignKey(pi => pi.ProductInStockId);
-            modelBuilder.Entity<Meal>()
-                .HasMany(meal => meal.Ingredients)
-                .WithMany(ingr => ingr.Meals)
-                .UsingEntity(j => j.ToTable("MealsIngredients"));
+            // modelBuilder.Entity<Meal>()
+            //     .HasMany(meal => meal.Ingredients)
+            //     .WithMany(ingr => ingr.Meals)
+            //     .UsingEntity(j => j.ToTable("MealsIngredients"));
+            modelBuilder.Entity<MealsIngredient>()
+                .HasKey(mi => new { mi.IngredientId, mi.MealId });
+            modelBuilder.Entity<MealsIngredient>()
+                .HasOne(mi => mi.Meal)
+                .WithMany(ingr => ingr.MealsIngredients)
+                .HasForeignKey(mi => mi.MealId);
+            modelBuilder.Entity<MealsIngredient>()
+                .HasOne(mi => mi.Ingredient)
+                .WithMany(ingr => ingr.MealsIngredients)
+                .HasForeignKey(mi => mi.IngredientId);
             modelBuilder.Entity<Menu>()
                 .HasMany(menu => menu.Meals)
                 .WithOne(meal => meal.Menu)
@@ -87,6 +98,7 @@ namespace Bite_IT.Data
             modelBuilder.ApplyConfiguration(new StockConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new IngredientConfiguration());
+            modelBuilder.ApplyConfiguration(new MealsIngredientsConfiguration());
             modelBuilder.ApplyConfiguration(new MealConfiguration());
             modelBuilder.ApplyConfiguration(new MenuConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());

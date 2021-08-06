@@ -8,6 +8,17 @@ namespace Bite_IT.Domain
     public enum ProductName
     {
         Schnitzel,
-        Beetroot
+        Beetroot,
+        Potato,
+        Carrot,
+        Fries,
+        Tomato,
+        Rice,
+        Beef,
+        Pork,
+        Peppers,
+        Mushroom,
+        Pasta,
+        Orange
     }
 }

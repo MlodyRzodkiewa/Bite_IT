@@ -40,11 +40,17 @@ namespace Bite_IT.Controllers
                 
                 menu.Meals = (List<Meal>) await _uow.Meals.GetAll(meal => meal.MenuId == menu.Id);
                 
-                foreach (var meal in menu.Meals)
-                {
-                    meal.Ingredients = await _uow.Ingredients.GetAll(
-                        ingredient => meal.Ingredients.Contains(ingredient));
-                }
+                 foreach (var meal in menu.Meals)
+                 {
+                     meal.MealsIngredients = await _uow.MealsIngredients.GetAll(
+                         mi => mi.MealId == meal.Id);
+
+                     foreach (var mi in meal.MealsIngredients)
+                     {
+                         mi.Ingredient = await _uow.Ingredients.Get(
+                         ingr => ingr.Id == mi.IngredientId);
+                     }
+                 }
 
                 var result = _mapper.Map<MenuDto>(menu);
         
