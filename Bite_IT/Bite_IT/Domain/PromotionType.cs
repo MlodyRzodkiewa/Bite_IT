@@ -2,6 +2,7 @@
 {
     public enum PromotionType
     {
-        MealOfTheDay
+        MealOfTheDay,
+        Regular
     }
 }

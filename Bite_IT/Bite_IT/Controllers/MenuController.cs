@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Bite_IT.Domain;
 using Bite_IT.Infrastructure;
 using Bite_IT.Models;
 using Microsoft.AspNetCore.Http;
@@ -28,13 +30,30 @@ namespace Bite_IT.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IList<MenuDto>>> GetMeals()
+        public async Task<ActionResult<MenuDto>> GetMenu()
         {
             try
             {
-                var menu = await _uow.Menu.GetAll();
-                var result = _mapper.Map<IList<MenuDto>>(menu);
+                var menu = await _uow.Menu.Get(m => m.RestaurantId == 1);
 
+                if (menu == null) return NotFound($"Menu for the restaurant has not been found.");
+                
+                menu.Meals = (List<Meal>) await _uow.Meals.GetAll(meal => meal.MenuId == menu.Id);
+                
+                 foreach (var meal in menu.Meals)
+                 {
+                     meal.MealsIngredients = await _uow.MealsIngredients.GetAll(
+                         mi => mi.MealId == meal.Id);
+
+                     foreach (var mi in meal.MealsIngredients)
+                     {
+                         mi.Ingredient = await _uow.Ingredients.Get(
+                         ingr => ingr.Id == mi.IngredientId);
+                     }
+                 }
+
+                var result = _mapper.Map<MenuDto>(menu);
+        
                 return Ok(result);
             }
             catch (Exception e)

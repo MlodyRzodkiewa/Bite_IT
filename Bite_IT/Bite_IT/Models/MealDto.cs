@@ -17,14 +17,13 @@ namespace Bite_IT.Models
         [StringLength(maximumLength: 256, ErrorMessage = "Meal descripton is too long!")]
         public string Description { get; set; }
         [Required]
-        public ICollection<Ingredient> Ingredients { get; set; }
-        [Required]
         public int MenuId { get; set; }
     }
 
     public class UpdateMealDto : CreateMealDto
     {
         public PromotionType PromotionType { get; set; }
+        public ICollection<Ingredient> Ingredients { get; set; }
         public Menu Menu { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
@@ -34,6 +33,7 @@ namespace Bite_IT.Models
         [Required]
         public int Id { get; set; }
         public PromotionType PromotionType { get; set; }
+        public ICollection<Ingredient> Ingredients { get; set; }
         public Menu Menu { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
