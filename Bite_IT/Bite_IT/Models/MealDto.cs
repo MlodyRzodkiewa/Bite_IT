@@ -18,6 +18,7 @@ namespace Bite_IT.Models
         public string Description { get; set; }
         [Required]
         public int MenuId { get; set; }
+        public List<string> FilterMarkers { get; set; }
     }
 
     public class UpdateMealDto : CreateMealDto

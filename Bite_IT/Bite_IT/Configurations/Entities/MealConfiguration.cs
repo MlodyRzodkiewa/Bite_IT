@@ -15,13 +15,21 @@ namespace Bite_IT.Configurations.Entities
                 {
                     Id = 1, MenuId = 1, Description = "Zupa pomidorowa ze świeżych pomidorów z dodatkiem bazylii",
                     Price = 35, Name = "Zupa Pomidorowa", MealType = MealType.Soup, 
-                    PromotionType = PromotionType.MealOfTheDay
+                    PromotionType = PromotionType.MealOfTheDay, FilterMarkers = new List<string>
+                    {
+                        MealType.GlutenFree.ToString(),
+                        MealType.LactoseFree.ToString(),
+                        MealType.Vegetarian.ToString(),
+                    }
                 },
                 new Meal
                 {
                     Id = 2, MenuId = 1, Description = "Spaghetti bolognese",
                     Price = 48, Name = "Spaghetti bolognese", MealType = MealType.MainDish, 
-                    PromotionType = PromotionType.Regular
+                    PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
+                    {
+                        MealType.LactoseFree.ToString(),
+                    }
                 },
                 new Meal
                 {

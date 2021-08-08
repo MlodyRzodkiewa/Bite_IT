@@ -1,8 +1,14 @@
+using System;
+using System.Collections.Generic;
 using Bite_IT.Configurations.Entities;
 using Bite_IT.Domain;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using System.Configuration;
+using System.Linq;
+using System.Text.Json;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.IdentityModel.Protocols;
 
 namespace Bite_IT.Data
@@ -40,10 +46,24 @@ namespace Bite_IT.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // var converter = new ValueConverter<IList<MealType>, string>(
+            //     v => v.ToString(),
+            //     v => ())
+            
             modelBuilder.Entity<ProductInStock>()
                 .HasMany(pis => pis.ProductItems)
                 .WithOne(pi => pi.ProductInStock)
                 .HasForeignKey(pi => pi.ProductInStockId);
+            modelBuilder.Entity<Meal>()
+                .Property(meal => meal.FilterMarkers)
+                .HasConversion(
+                    v => JsonSerializer.Serialize(v, null),
+                    //v => JsonSerializer.Deserialize<List<MealType>>(v, null),
+                    v => JsonSerializer.Deserialize<List<string>>(v, null),
+                    new ValueComparer<ICollection<string>>(
+                        (c1, c2) => c1.SequenceEqual(c2),
+                        c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
+                        c => (ICollection<string>)c.ToList()));
             // modelBuilder.Entity<Meal>()
             //     .HasMany(meal => meal.Ingredients)
             //     .WithMany(ingr => ingr.Meals)

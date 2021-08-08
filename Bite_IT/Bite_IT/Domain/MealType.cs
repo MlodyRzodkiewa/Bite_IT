@@ -6,5 +6,9 @@
         MainDish,
         Dessert,
         Drink,
+        GlutenFree,
+        LactoseFree,
+        Vegetarian,
+        Vegan
     }
 }

@@ -13,7 +13,8 @@ namespace Bite_IT.Domain
         public MealType MealType { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        
+        public List<string> FilterMarkers { get; set; }
+
         public PromotionType PromotionType { get; set; }
         [ForeignKey(nameof(Menu))]
         public int MenuId { get; set; }
