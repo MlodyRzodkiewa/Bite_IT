@@ -19,6 +19,7 @@ namespace Bite_IT.Data
         public DbSet<Restaurant> Restaurant { get; set; }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<MealsIngredient> MealsIngredients { get; set; }
+        public DbSet<OrderLine> OrderLines { get; set; }
         
         public RestaurantDbContext(DbContextOptions options) : base(options)
         {
@@ -62,10 +63,22 @@ namespace Bite_IT.Data
                 .HasMany(menu => menu.Meals)
                 .WithOne(meal => meal.Menu)
                 .HasForeignKey(meal => meal.MenuId);
-            modelBuilder.Entity<Order>()
-                .HasMany(order => order.Meals)
+            /*modelBuilder.Entity<Order>()
+                .HasMany(order => order.Meal)
                 .WithMany(meal => meal.Orders)
-                .UsingEntity(j => j.ToTable("OrdersMeals"));
+                .UsingEntity(j => j.ToTable("OrdersLines"));*/
+            
+            modelBuilder.Entity<OrderLine>()
+                .HasKey(ol => new { ol.OrderId, ol.MealId });  
+            modelBuilder.Entity<OrderLine>()
+                .HasOne(ol => ol.Order)
+                .WithMany(or => or.OrderLines)
+                .HasForeignKey(ol => ol.OrderId);  
+            modelBuilder.Entity<OrderLine>()
+                .HasOne(ol => ol.Meal)
+                .WithMany(me => me.OrderLines)
+                .HasForeignKey(ol => ol.MealId);
+            
             modelBuilder.Entity<Stock>()
                 .HasMany(stock => stock.Products)
                 .WithOne(product => product.Stock)
@@ -105,6 +118,7 @@ namespace Bite_IT.Data
             modelBuilder.ApplyConfiguration(new ProductItemConfiguration());
             modelBuilder.ApplyConfiguration(new ProductInStockConfiguration());
             modelBuilder.ApplyConfiguration(new RestaurantConfiguration());
+            
         }
     }
 }

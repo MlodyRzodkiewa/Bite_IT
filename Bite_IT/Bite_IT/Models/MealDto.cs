@@ -25,7 +25,7 @@ namespace Bite_IT.Models
         public PromotionType PromotionType { get; set; }
         public ICollection<Ingredient> Ingredients { get; set; }
         public Menu Menu { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<OrderLine> OrderLines { get; set; }
     }
     
     public class MealDto : CreateMealDto
@@ -35,6 +35,6 @@ namespace Bite_IT.Models
         public PromotionType PromotionType { get; set; }
         public ICollection<Ingredient> Ingredients { get; set; }
         public Menu Menu { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<OrderLine> OrderLines { get; set; }
     }
 }
