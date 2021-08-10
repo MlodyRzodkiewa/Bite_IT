@@ -68,8 +68,8 @@ namespace Bite_IT.Data
                 .WithMany(meal => meal.Orders)
                 .UsingEntity(j => j.ToTable("OrdersLines"));*/
             
-            modelBuilder.Entity<OrderLine>()
-                .HasKey(ol => new { ol.OrderId, ol.MealId });  
+            //modelBuilder.Entity<OrderLine>()
+            //    .HasKey(ol => new { ol.OrderId, ol.MealId });  
             modelBuilder.Entity<OrderLine>()
                 .HasOne(ol => ol.Order)
                 .WithMany(or => or.OrderLines)

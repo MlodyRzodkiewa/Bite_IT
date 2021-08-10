@@ -24,6 +24,7 @@ namespace Bite_IT.Infrastructure
         public IGenericRepository<ProductItem> ProductItems => new GenericRepository<ProductItem>(_context);
         public IGenericRepository<Restaurant> Restaurants => new GenericRepository<Restaurant>(_context);
         public IGenericRepository<Stock> Stock => new GenericRepository<Stock>(_context);
+        public IGenericRepository<OrderLine> OrderLines => new GenericRepository<OrderLine>(_context);
 
         public void Dispose()
         {

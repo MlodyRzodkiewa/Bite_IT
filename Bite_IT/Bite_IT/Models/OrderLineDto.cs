@@ -18,6 +18,7 @@ namespace Bite_IT.Models
     }
     public class OrderLineDto : CreateOrderLineDto
     {
+        public int Id { get; set; }
         public Order Order { get; set; }
         public Meal Meal { get; set; }
     }
