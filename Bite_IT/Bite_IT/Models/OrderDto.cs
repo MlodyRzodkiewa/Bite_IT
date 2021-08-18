@@ -12,20 +12,22 @@ namespace Bite_IT.Models
         [Required]
         public int RestaurantId { get; set; }
         [Required]
-        public List<Meal> Meals { get; set; }
+        public DateTime CreationDate { get; set; }
     }
     
     public class UpdateOrderDto : CreateOrderDto
     {
-        public RestaurantDto Restaurant { get; set; }
+        public List<OrderLine> OrderLines { get; set; }
     }
 
     public class OrderDto : CreateOrderDto
     {
-            [Required] 
-            public int Id { get; set; }
-            [Required]
-            public DateTime CreationDate { get; set; }
+        [Required] 
+        public int Id { get; set; }
+        [Required]
+        public RestaurantDto Restaurant { get; set; }
+        public List<OrderLine> OrderLines { get; set; }
+        
 
     }
 }
