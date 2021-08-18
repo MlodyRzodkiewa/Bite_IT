@@ -52,7 +52,8 @@ namespace Bite_IT.Controllers
         {
             try
             {
-                var orderLines = await _uow.OrderLines.GetAll(c => c.OrderId == id);
+                var orderLines = await _uow.OrderLines.GetAll(c => c.OrderId == id,
+                    includes: new List<string> {"Meal"});
 
                 if (orderLines == null)
                 {
