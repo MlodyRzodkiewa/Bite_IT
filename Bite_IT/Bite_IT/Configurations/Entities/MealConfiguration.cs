@@ -26,8 +26,14 @@ namespace Bite_IT.Configurations.Entities
                 new Meal
                 {
                     Id = 3, MenuId = 1, Description = "Sok pomarańczowy",
-                    Price = 12, Name = "Sok wyciskany ze świeżych pomarańczy", MealType = MealType.MainDish, 
+                    Price = 12, Name = "Sok wyciskany ze świeżych pomarańczy", MealType = MealType.Drink, 
                     PromotionType = PromotionType.MealOfTheDay
+                },
+                new Meal
+                {
+                    Id = 4, MenuId = 1, Description = "Szarlotka",
+                    Price = 15, Name = "Szarlotka z lodami i bitą śmietaną", MealType = MealType.Dessert, 
+                    PromotionType = PromotionType.Regular
                 }
             );
         }
