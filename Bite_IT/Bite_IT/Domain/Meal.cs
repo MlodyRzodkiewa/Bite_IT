@@ -21,6 +21,6 @@ namespace Bite_IT.Domain
         public Menu Menu { get; set; }
         //public ICollection<Ingredient> Ingredients { get; set; }
         public ICollection<MealsIngredient> MealsIngredients { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<OrderLine> OrderLines { get; set; }
     }
 }

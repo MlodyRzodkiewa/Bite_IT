@@ -16,6 +16,7 @@ namespace Bite_IT.Infrastructure
         IGenericRepository<ProductItem> ProductItems { get; }
         IGenericRepository<Restaurant> Restaurants { get; }
         IGenericRepository<Stock> Stock { get; }
+        IGenericRepository<OrderLine> OrderLines { get; }
         Task Save();
     }
 }
