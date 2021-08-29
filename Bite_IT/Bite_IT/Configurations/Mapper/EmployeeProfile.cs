@@ -8,9 +8,8 @@ namespace Bite_IT.Configurations.Mapper
     {
         public EmployeeProfile()
         {
-            CreateMap<Employee, CreateEmployeeDto>().ReverseMap();
-            CreateMap<Employee, UpdateEmployeeDto>().ReverseMap();
-            CreateMap<Employee, EmloyeeDto>().ReverseMap();
+            CreateMap<Employee, LoginEmployeeDto>().ReverseMap();
+            CreateMap<Employee, RegisterEmployeeDto>().ReverseMap();
         }
     }
 }
