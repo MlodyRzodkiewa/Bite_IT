@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Bite_IT.Domain;
 using Bite_IT.Infrastructure;
 using Bite_IT.Models;
+using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace Bite_IT.Controllers
 {
@@ -94,6 +97,38 @@ namespace Bite_IT.Controllers
                 await _uow.OrderLines.Remove(id);
                 await _uow.Save();
                 return NoContent();
+            }
+            catch (Exception e)
+            {
+                return Problem("Internal server error, please try again");
+            }
+            
+        }
+        [HttpDelete("{orderId}/{mealId}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> DeleteMealsFromOrder(int mealId, int orderId)
+        {
+
+            if (orderId < 1 || mealId < 1)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                var orderLinesToRemove = await _uow.OrderLines.GetAll(c => c.OrderId == orderId);
+                var orderLineToRemove = orderLinesToRemove.FirstOrDefault(x => x.MealId == mealId);
+
+                if (orderLineToRemove == null)
+                {
+                    return NotFound($"Not found orderLine to remove");
+                }
+                
+                await _uow.OrderLines.Remove(orderLineToRemove.Id);
+                await _uow.Save();
+                return Ok("Line remove");
             }
             catch (Exception e)
             {
