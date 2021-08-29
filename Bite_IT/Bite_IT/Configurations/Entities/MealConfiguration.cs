@@ -42,7 +42,32 @@ namespace Bite_IT.Configurations.Entities
                     Id = 4, MenuId = 1, Description = "Szarlotka",
                     Price = 15, Name = "Szarlotka z lodami i bitą śmietaną", MealType = MealType.Dessert, 
                     PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 5, MenuId = 1, Description = "Gnocchi z boczkiem",
+                    Price = 38, Name = "Gnocchi z boczkiem", MealType = MealType.MainDish, 
+                    PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 6, MenuId = 1, Description = "Lemoniada miętowa",
+                    Price = 12, Name = "Lemoniada miętowa", MealType = MealType.Drink, 
+                    PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 7, MenuId = 1, Description = "Tiramisu",
+                    Price = 19, Name = "Tiramisu", MealType = MealType.Dessert, 
+                    PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 8, MenuId = 1, Description = "Gazpacho",
+                    Price = 14, Name = "Gazpacho", MealType = MealType.Soup, 
+                    PromotionType = PromotionType.Regular
                 }
+
             );
         }
         
