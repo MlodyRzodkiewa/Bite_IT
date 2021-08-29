@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using Bite_IT.Data;
 using Bite_IT.Hubs;
 using Bite_IT.Infrastructure;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Protocols;
 
@@ -38,7 +39,8 @@ namespace Bite_IT
         {
             services.AddDbContext<RestaurantDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("NpgsqlConnectionString")));
-
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddEntityFrameworkStores<RestaurantDbContext>();
             //Unit of Work
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             

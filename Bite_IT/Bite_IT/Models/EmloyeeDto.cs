@@ -1,35 +1,40 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using Bite_IT.Domain;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Bite_IT.Models
 {
-    public class CreateEmployeeDto
+    public class LoginEmployeeDto
     {
         [Required]
-        public String UserName { get; set; }
+        public string UserName { get; set; }
         [Required]
-        public String PasswordHash { get; set; }
-        public String FirstName { get; set; }
-        public String LastName { get; set; }
-        [Required]
-        public int Role { get; set; }
-        [DataType(DataType.PhoneNumber)]
-        public String PhoneNumber { get; set; }
-        [DataType(DataType.EmailAddress)]
-        public String Email { get; set; }
-        public DateTime BirthDateTime { get; set; }
-        public int RestaurantId { get; set; }
+        [StringLength(20, ErrorMessage = "Your password is limited to {2} to {1} characters", MinimumLength = 5)]
+        public string Password { get; set; }
     }
 
-    public class UpdateEmployeeDto : CreateEmployeeDto
-    {
-        public RestaurantDto Restaurant { get; set; }
-    }
-    
-    public class EmloyeeDto : CreateOrderDto
+    public class RegisterEmployeeDto
     {
         [Required]
-        public int Id { get; set; }
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        public string PasswordHash { get; set; }
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        public string PhoneNumber { get; set; }
+        [Required]
+        public String FirstName { get; set; }
+        [Required]
+        public String LastName { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime BirthDateTime { get; set; }
+        [Required]
+        public RoleType Role { get; set; }
+        
     }
+
 }
