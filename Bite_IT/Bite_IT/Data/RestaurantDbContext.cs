@@ -7,13 +7,14 @@ using Npgsql;
 using System.Configuration;
 using System.Linq;
 using System.Text.Json;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.IdentityModel.Protocols;
 
 namespace Bite_IT.Data
 {
-    public class RestaurantDbContext : DbContext
+    public class RestaurantDbContext : IdentityDbContext
     {
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }

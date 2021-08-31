@@ -20,6 +20,7 @@ using Bite_IT.Data;
 using Bite_IT.Hubs;
 using Bite_IT.Infrastructure;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Protocols;
 
@@ -37,10 +38,19 @@ namespace Bite_IT
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+
+            // In production, the React files will be served from this directory
+            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
+            
             services.AddDbContext<RestaurantDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("NpgsqlConnectionString")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<RestaurantDbContext>();
+            // services.AddDefaultIdentity<IdentityUser>()
+            //     .AddEntityFrameworkStores<RestaurantDbContext>();
+            
+            
             //Unit of Work
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             
@@ -84,6 +94,8 @@ namespace Bite_IT
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
             app.UseCors("ClientPermission");
             
@@ -96,8 +108,21 @@ namespace Bite_IT
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
+                
                 endpoints.MapHub<MenuHub>("/hub/menu");
+            });
+            
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
             });
         }
     }
