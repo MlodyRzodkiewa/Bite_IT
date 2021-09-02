@@ -66,6 +66,84 @@ namespace Bite_IT.Configurations.Entities
                     Id = 8, MenuId = 1, Description = "Gazpacho",
                     Price = 14, Name = "Gazpacho", MealType = MealType.Soup, 
                     PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 9, MenuId = 1, Description = "Zupa z domowej kiszonej kpusty na wywarze z wędzonych żeberk i boczku",
+                    Price = 12, Name = "Kwaśnica", MealType = MealType.Soup, 
+                    PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
+                    {
+                        MealType.GlutenFree.ToString(),
+                        MealType.LactoseFree.ToString(),
+                    }
+                },
+                new Meal
+                {
+                    Id = 10, MenuId = 1, Description = "Pikantna zupa na mięsie wołowym",
+                    Price = 16, Name = "Zupa gulaszowa", MealType = MealType.Soup, 
+                    PromotionType = PromotionType.Regular, FilterMarkers = new List<string> { }
+                },
+                new Meal
+                {
+                    Id = 11, MenuId = 1, Description = "Placek drożdżowy z sezonowym owocem",
+                    Price = 10, Name = "Miała baba placek", MealType = MealType.Dessert, 
+                    PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
+                    {
+                        MealType.GlutenFree.ToString(),
+                        MealType.Vegetarian.ToString()
+                    }
+                },
+                new Meal
+                {
+                    Id = 12, MenuId = 1, Description = "Placek kokosowo-czekoladowy z żurawiną i kokosem",
+                    Price = 15, Name = "Murzynek", MealType = MealType.Dessert, 
+                    PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
+                    {
+                        MealType.GlutenFree.ToString(),
+                        MealType.LactoseFree.ToString(),
+                        MealType.Vegetarian.ToString(),
+                    }
+                },
+                new Meal
+                {
+                    Id = 13, MenuId = 1, Description = "Coca-Cola z lodem",
+                    Price = 5, Name = "Coca-Cola", MealType = MealType.Drink, 
+                    PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
+                    {
+                        MealType.GlutenFree.ToString(),
+                        MealType.LactoseFree.ToString(),
+                        MealType.Vegetarian.ToString(),
+                    }
+                },
+                new Meal
+                {
+                    Id = 14, MenuId = 1, Description = "Herbata w różnych smakach: czarna, zielona, biała, owocowa",
+                    Price = 7, Name = "Herbata", MealType = MealType.Drink, 
+                    PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
+                    {
+                        MealType.GlutenFree.ToString(),
+                        MealType.LactoseFree.ToString(),
+                        MealType.Vegetarian.ToString(),
+                    }
+                },
+                new Meal
+                {
+                    Id = 15, MenuId = 1, Description = "Placek ziemniaczany z gulaszem wołowym",
+                    Price = 27, Name = "Jadło drwala", MealType = MealType.MainDish, 
+                    PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
+                    {
+                        MealType.GlutenFree.ToString(),
+                        MealType.LactoseFree.ToString(),
+                    }
+                },
+                new Meal
+                {
+                    Id = 16, MenuId = 1, Description = "Naleśniki z białym serem, owocami lub czekoladą",
+                    Price = 8, Name = "Naleśniki", MealType = MealType.MainDish, 
+                    PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
+                    {
+                        MealType.Vegetarian.ToString(),
+                    }
                 }
 
             );
