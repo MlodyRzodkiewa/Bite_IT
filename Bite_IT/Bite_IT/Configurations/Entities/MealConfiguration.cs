@@ -69,7 +69,24 @@ namespace Bite_IT.Configurations.Entities
                 },
                 new Meal
                 {
-                    Id = 9, MenuId = 1, Description = "Zupa z domowej kiszonej kpusty na wywarze z wędzonych żeberk i boczku",
+                    Id = 9, MenuId = 1, Description = "Lasagna",
+                    Price = 19, Name = "Lasagna naleśnikowa", MealType = MealType.MainDish, 
+                    PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 10, MenuId = 1, Description = "Prawdziwe lody",
+                    Price = 12, Name = "Prawdziwe lody z owocami i bitą śmietaną", MealType = MealType.Dessert, 
+                    PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 11, MenuId = 1, Description = "Lemoniada arbuzowa",
+                    Price = 12, Name = "Lemoniada arbuzowa", MealType = MealType.Drink, 
+                    PromotionType = PromotionType.Regular
+                },
+                new Meal{
+                    Id = 12, MenuId = 1, Description = "Zupa z domowej kiszonej kpusty na wywarze z wędzonych żeberk i boczku",
                     Price = 12, Name = "Kwaśnica", MealType = MealType.Soup, 
                     PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
                     {
@@ -79,13 +96,13 @@ namespace Bite_IT.Configurations.Entities
                 },
                 new Meal
                 {
-                    Id = 10, MenuId = 1, Description = "Pikantna zupa na mięsie wołowym",
+                    Id = 13, MenuId = 1, Description = "Pikantna zupa na mięsie wołowym",
                     Price = 16, Name = "Zupa gulaszowa", MealType = MealType.Soup, 
                     PromotionType = PromotionType.Regular, FilterMarkers = new List<string> { }
                 },
                 new Meal
                 {
-                    Id = 11, MenuId = 1, Description = "Placek drożdżowy z sezonowym owocem",
+                    Id = 14, MenuId = 1, Description = "Placek drożdżowy z sezonowym owocem",
                     Price = 10, Name = "Miała baba placek", MealType = MealType.Dessert, 
                     PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
                     {
@@ -95,7 +112,7 @@ namespace Bite_IT.Configurations.Entities
                 },
                 new Meal
                 {
-                    Id = 12, MenuId = 1, Description = "Placek kokosowo-czekoladowy z żurawiną i kokosem",
+                    Id = 15, MenuId = 1, Description = "Placek kokosowo-czekoladowy z żurawiną i kokosem",
                     Price = 15, Name = "Murzynek", MealType = MealType.Dessert, 
                     PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
                     {
@@ -106,7 +123,7 @@ namespace Bite_IT.Configurations.Entities
                 },
                 new Meal
                 {
-                    Id = 13, MenuId = 1, Description = "Coca-Cola z lodem",
+                    Id = 16, MenuId = 1, Description = "Coca-Cola z lodem",
                     Price = 5, Name = "Coca-Cola", MealType = MealType.Drink, 
                     PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
                     {
@@ -117,7 +134,7 @@ namespace Bite_IT.Configurations.Entities
                 },
                 new Meal
                 {
-                    Id = 14, MenuId = 1, Description = "Herbata w różnych smakach: czarna, zielona, biała, owocowa",
+                    Id = 17, MenuId = 1, Description = "Herbata w różnych smakach: czarna, zielona, biała, owocowa",
                     Price = 7, Name = "Herbata", MealType = MealType.Drink, 
                     PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
                     {
@@ -128,7 +145,7 @@ namespace Bite_IT.Configurations.Entities
                 },
                 new Meal
                 {
-                    Id = 15, MenuId = 1, Description = "Placek ziemniaczany z gulaszem wołowym",
+                    Id = 18, MenuId = 1, Description = "Placek ziemniaczany z gulaszem wołowym",
                     Price = 27, Name = "Jadło drwala", MealType = MealType.MainDish, 
                     PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
                     {
@@ -138,13 +155,15 @@ namespace Bite_IT.Configurations.Entities
                 },
                 new Meal
                 {
-                    Id = 16, MenuId = 1, Description = "Naleśniki z białym serem, owocami lub czekoladą",
+                    Id = 19, MenuId = 1, Description = "Naleśniki z białym serem, owocami lub czekoladą",
                     Price = 8, Name = "Naleśniki", MealType = MealType.MainDish, 
                     PromotionType = PromotionType.Regular, FilterMarkers = new List<string>
                     {
                         MealType.Vegetarian.ToString(),
                     }
                 }
+                
+                
 
             );
         }
