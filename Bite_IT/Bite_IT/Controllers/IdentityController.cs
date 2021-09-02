@@ -24,27 +24,25 @@ namespace ASP.NETCoreWithReact.Controllers
         [HttpPost("login")]
         public async Task<ActionResult> Login(LoginEmployeeDto model)
         {
-            var userFromDb = await _userManager.FindByNameAsync(model.UserName);
+            var user = await _userManager.FindByNameAsync(model.UserName);
 
-            if (userFromDb == null)
+            if (user != null)
             {
-                return BadRequest();
+                var pswrdValidation = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+
+                if (pswrdValidation.Succeeded)
+                {
+                    return Ok(new
+                    {
+                        result = pswrdValidation,
+                        username = user.UserName,
+                        email = user.Email,
+                        token = "Token goes here"
+                    });
+                }
             }
 
-            var result = await _signInManager.CheckPasswordSignInAsync(userFromDb, model.Password, false);
-
-            if (!result.Succeeded)
-            {
-                return BadRequest();
-            }
-            
-            return Ok(new
-            {
-                result = result,
-                username = userFromDb.UserName,
-                email = userFromDb.Email,
-                token = "Token goes here"
-            });
+            return BadRequest();
         }
     }
 }
