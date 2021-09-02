@@ -66,7 +66,27 @@ namespace Bite_IT.Configurations.Entities
                     Id = 8, MenuId = 1, Description = "Gazpacho",
                     Price = 14, Name = "Gazpacho", MealType = MealType.Soup, 
                     PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 9, MenuId = 1, Description = "Lasagna",
+                    Price = 19, Name = "Lasagna naleśnikowa", MealType = MealType.MainDish, 
+                    PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 10, MenuId = 1, Description = "Prawdziwe lody",
+                    Price = 12, Name = "Prawdziwe lody z owocami i bitą śmietaną", MealType = MealType.Dessert, 
+                    PromotionType = PromotionType.Regular
+                },
+                new Meal
+                {
+                    Id = 11, MenuId = 1, Description = "Lemoniada arbuzowa",
+                    Price = 12, Name = "Lemoniada arbuzowa", MealType = MealType.Drink, 
+                    PromotionType = PromotionType.Regular
                 }
+                
+                
 
             );
         }
