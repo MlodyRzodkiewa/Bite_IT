@@ -15,7 +15,9 @@ namespace Bite_IT.Models
     }
 
     public class RegisterEmployeeDto
-    {
+    { 
+        [Required] 
+        public string UserName { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }

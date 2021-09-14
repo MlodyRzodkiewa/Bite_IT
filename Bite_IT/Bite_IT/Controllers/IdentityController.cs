@@ -44,5 +44,28 @@ namespace ASP.NETCoreWithReact.Controllers
 
             return BadRequest();
         }
+        
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(RegisterEmployeeDto model)
+        {
+            var userToCreate = new Employee()
+            {
+                Email = model.Email,
+                UserName = model.UserName,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber,
+                Role = model.Role,
+                BirthDateTime = model.BirthDateTime,
+                RestaurantId = 1
+            };
+            var result = await _userManager.CreateAsync(userToCreate, model.PasswordHash);
+            if (result.Succeeded)
+            {
+                return Ok();
+            }
+
+            return BadRequest(result);
+        }
     }
 }
