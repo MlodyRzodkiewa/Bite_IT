@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Bite_IT.Domain;
 using Bite_IT.Models;
@@ -55,16 +56,18 @@ namespace ASP.NETCoreWithReact.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,
-                // Role = model.Role,
-                // BirthDateTime = model.BirthDateTime,
+                Role = 0,
+                BirthDateTime = DateTime.Today,
                 RestaurantId = 1
             };
             var result = await _userManager.CreateAsync(userToCreate, model.PasswordHash);
+            Console.Out.WriteLine(result);
             if (result.Succeeded)
             {
                 return Ok();
             }
 
+            
             return BadRequest(result);
         }
     }
