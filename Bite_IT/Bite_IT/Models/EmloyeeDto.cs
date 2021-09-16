@@ -21,7 +21,7 @@ namespace Bite_IT.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [Required]
+        // [Required]
         [DataType(DataType.Password)]
         public string PasswordHash { get; set; }
         [Required]

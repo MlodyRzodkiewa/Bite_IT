@@ -56,8 +56,8 @@ namespace ASP.NETCoreWithReact.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,
-                Role = 0,
-                BirthDateTime = DateTime.Today,
+                Role = model.Role,
+                BirthDateTime = model.BirthDateTime,
                 RestaurantId = 1
             };
             var result = await _userManager.CreateAsync(userToCreate, model.PasswordHash);
