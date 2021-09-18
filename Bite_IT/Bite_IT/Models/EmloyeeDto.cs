@@ -31,11 +31,10 @@ namespace Bite_IT.Models
         public String FirstName { get; set; }
         [Required]
         public String LastName { get; set; }
-        [Required]
-        [DataType(DataType.Date)]
-        public DateTime BirthDateTime { get; set; }
-        [Required]
-        public RoleType Role { get; set; }
+        // [Required]
+        public string BirthDateTime { get; set; }
+        // [Required]
+        public int Role { get; set; }
         
     }
 
