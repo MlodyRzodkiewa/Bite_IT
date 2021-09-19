@@ -45,7 +45,16 @@ namespace Bite_IT
             
             services.AddDbContext<RestaurantDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("NpgsqlConnectionString")));
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<IdentityUser, IdentityRole>(opt =>
+            {
+                opt.Password.RequireDigit = false;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequiredLength = 4;
+
+                opt.User.RequireUniqueEmail = true;
+            })
                 .AddEntityFrameworkStores<RestaurantDbContext>();
             // services.AddDefaultIdentity<IdentityUser>()
             //     .AddEntityFrameworkStores<RestaurantDbContext>();
